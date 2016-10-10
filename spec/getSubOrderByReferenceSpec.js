@@ -9,7 +9,7 @@ const nock = require("nock");
 // nock.recorder.rec();
 nock.disableNetConnect();
 // silence console logs
-// console.log = () => {};
+console.log = () => {};
 
 describe("Retrieve a sub order", () => {
 
@@ -42,7 +42,7 @@ describe("Retrieve a sub order", () => {
       getSubOrderByReference.process.call(this.self, this.message, this.config);
     });
 
-    it("sends a correct request to a correct Shopatron endpoint", () => {
+    it("sends a correct request to a correct VMS endpoint", () => {
       expect(this.getSubOrderByReferenceRequest.isDone()).toBe(true);
     });
 

@@ -49,7 +49,7 @@ describe("Acknowledge a sub order", () => {
       acknowledgeSubOrder.process.call(this.self, this.message, this.config);
     });
 
-    it("sends a correct request to a correct Shopatron endpoint", () => {
+    it("sends a correct request to a correct VMS endpoint", () => {
       expect(this.acknowledgeSubOrderRequest.isDone()).toBe(true);
     });
 
