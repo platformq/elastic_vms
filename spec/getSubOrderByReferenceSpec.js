@@ -1,21 +1,21 @@
 "use strict";
 
-const acknowledgeSubOrder = require('../lib/actions/acknowledgeSubOrder.js');
-const acknowledgeSubOrderResponse = require('./fixtures/acknowledgeSubOrderResponse.js');
-const acknowledgeSubOrderRequest = require('./fixtures/getSubOrderByReferenceResponse.js');
+const getSubOrderByReference = require('../lib/actions/getSubOrderByReference.js');
+const getSubOrderByReferenceResponse = require('./fixtures/getSubOrderByReferenceResponse.js');
 const elasticio = require('elasticio-node');
 const messages = elasticio.messages;
 // disable requests to the outside world
 const nock = require("nock");
+// nock.recorder.rec();
 nock.disableNetConnect();
 // silence console logs
-console.log = () => {};
+// console.log = () => {};
 
-describe("Acknowledge a sub order", () => {
+describe("Retrieve a sub order", () => {
 
   beforeEach(() => {
     this.message = {
-      body: acknowledgeSubOrderRequest
+      body: { reference: "MD1449STAGING" }
     }
 
     this.config = {
@@ -26,17 +26,10 @@ describe("Acknowledge a sub order", () => {
 
   describe("Valid request", () => {
     beforeEach((done) => {
-      this.acknowledgeSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
+      this.getSubOrderByReferenceRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/sub-orders/610', {
-                                         "data": {
-                                            "attributes": {
-                                              "acknowledge": true
-                                            },
-                                            "type": "sub-orders",
-                                            "id": 610
-                                          }
-                                      });
+                                      .get('/api/v1/sub-orders')
+                                      .query({filter: { reference: "MD1449STAGING" }});
 
       this.self = {
         emit() { done(); }
@@ -44,13 +37,13 @@ describe("Acknowledge a sub order", () => {
 
       spyOn(this.self, "emit").and.callThrough();
 
-      this.acknowledgeSubOrderRequest = this.acknowledgeSubOrderRequest.reply(200, acknowledgeSubOrderResponse);
+      this.getSubOrderByReferenceRequest = this.getSubOrderByReferenceRequest.reply(200, getSubOrderByReferenceResponse);
 
-      acknowledgeSubOrder.process.call(this.self, this.message, this.config);
+      getSubOrderByReference.process.call(this.self, this.message, this.config);
     });
 
     it("sends a correct request to a correct Shopatron endpoint", () => {
-      expect(this.acknowledgeSubOrderRequest.isDone()).toBe(true);
+      expect(this.getSubOrderByReferenceRequest.isDone()).toBe(true);
     });
 
     it("emits valid JSON API compliant data", () => {
@@ -58,7 +51,7 @@ describe("Acknowledge a sub order", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual(acknowledgeSubOrderResponse);
+      expect(passedMessageBody).toEqual(JSON.stringify(getSubOrderByReferenceResponse));
     });
   });
 
@@ -68,9 +61,10 @@ describe("Acknowledge a sub order", () => {
         emit() { done(); }
       };
 
-      this.acknowledgeSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
+      this.getSubOrderByReferenceRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/sub-orders/undefined');
+                                      .get('/api/v1/sub-orders/filter[reference]=undefined')
+                                      .query({filter: { reference: "undefined" }});
 
       this.message = {
         body: {
@@ -80,9 +74,9 @@ describe("Acknowledge a sub order", () => {
 
       spyOn(this.self, "emit").and.callThrough();
 
-      this.acknowledgeSubOrderRequest = this.acknowledgeSubOrderRequest.reply(404);
+      this.getSubOrderByReferenceRequest = this.getSubOrderByReferenceRequest.reply(404);
 
-      acknowledgeSubOrder.process.call(this.self, this.message, this.config);
+      getSubOrderByReference.process.call(this.self, this.message, this.config);
     });
 
     it("emits an error", () => {
