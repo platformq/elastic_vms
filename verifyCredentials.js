@@ -7,8 +7,10 @@ module.exports = verify;
 function verify(config, cb) {
   console.log('Verifying credentials...');
 
-  function makeRequest(options) {
-    options.url = `${options.url}sub-orders`
+  function makeRequest(authenticationHeaders) {
+    let options = Object.assign({}, authenticationHeaders, {
+      url: `${authenticationHeaders.url}sub-orders`
+    });
 
     return new Promise((resolve, reject) => {
       request.get(options, (error, response, body) => {
