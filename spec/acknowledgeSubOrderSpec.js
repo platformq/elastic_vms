@@ -16,7 +16,7 @@ describe("Acknowledge a sub order", () => {
   beforeEach(() => {
     this.message = {
       body: {
-        vmsSubOrders: acknowledgeSubOrderRequest
+        currentMessage: acknowledgeSubOrderRequest
       }
     }
 
@@ -60,7 +60,13 @@ describe("Acknowledge a sub order", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual({ vmsSubOrderReference: acknowledgeSubOrderResponse });
+      expect(passedMessageBody).toEqual({ currentMessage: acknowledgeSubOrderResponse,
+                                          vms: {
+                                            acknowledgeSubOrder: {
+                                              vmsSubOrderReference: acknowledgeSubOrderResponse
+                                            }
+                                          }
+                                        });
     });
   });
 
