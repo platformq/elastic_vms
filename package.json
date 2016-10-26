@@ -1,12 +1,21 @@
 {
   "name": "elastic-vms",
   "version": "0.0.1",
-  "description": "",
+  "description": "Elastic VMS component",
   "scripts": {
     "test": "jasmine"
   },
-  "author": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/platformq/elastic_vms.git"
+  },
+  "author": "Kris Quigley",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/platformq/elastic_vms/issues"
+  },
+  "homepage": "https://github.com/platformq/elastic_vms#readme",
   "dependencies": {
     "elasticio-node": "0.0.7",
     "promise": "^7.1.1",
