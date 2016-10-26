@@ -1,0 +1,24 @@
+[{
+  "data": {
+    "id": "1",
+    "type": "vendors",
+    "links": {
+      "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/1"
+    },
+    "attributes": {
+      "name": "Test",
+      "slug": "test",
+      "references": [
+        "test"
+      ],
+      "created-at": "2015-09-10T09:44:34.977+01:00",
+      "updated-at": "2015-09-22T09:58:26.615+01:00",
+      "traffic-lights-enabled": false,
+      "company-name": "placeholder",
+      "description": "placeholder",
+      "town": "placeholder",
+      "postcode": "placeholder",
+      "leadtime": 1
+    }
+  }
+}]
