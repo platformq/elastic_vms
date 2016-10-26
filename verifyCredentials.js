@@ -23,9 +23,9 @@ function verify(config, cb) {
 
   function parseResponse(response) {
     if (response.statusCode < 400) {
-      new Promise.resolve();
+      return Promise.resolve();
     } else {
-      new Promise.reject(Error(`Response status code was ${response.statusCode}, should be 2XX/3XX`));
+      return Promise.reject(Error(`Response status code was ${response.statusCode}, should be 2XX/3XX`));
     }
   }
 
