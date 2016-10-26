@@ -8,7 +8,7 @@ function verify(config, cb) {
   console.log('Verifying credentials...');
 
   function makeRequest(options) {
-    options.url = `${options.host}sub-orders`
+    options.url = `${options.url}sub-orders`
 
     return new Promise((resolve, reject) => {
       request.get(options, (error, response, body) => {
