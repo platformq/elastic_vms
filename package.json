@@ -6,7 +6,8 @@
     "test": "jasmine"
   },
   "engines" : { 
-    "node" : "6.6.0" 
+    "node": "6.6.0",
+    "npm": "3.10.7" 
   },
   "main": "index.js",
   "repository": {
