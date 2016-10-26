@@ -1,24 +1,454 @@
-[{
-  "data": {
-    "id": "1",
-    "type": "vendors",
-    "links": {
-      "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/1"
+{
+  "data": [
+    {
+      "id": "1",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/1"
+      },
+      "attributes": {
+        "name": "Test",
+        "slug": "test",
+        "references": [
+          "test"
+        ],
+        "created-at": "2015-09-10T09:44:34.977+01:00",
+        "updated-at": "2015-09-22T09:58:26.615+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
     },
-    "attributes": {
-      "name": "Test",
-      "slug": "test",
-      "references": [
-        "test"
-      ],
-      "created-at": "2015-09-10T09:44:34.977+01:00",
-      "updated-at": "2015-09-22T09:58:26.615+01:00",
-      "traffic-lights-enabled": false,
-      "company-name": "placeholder",
-      "description": "placeholder",
-      "town": "placeholder",
-      "postcode": "placeholder",
-      "leadtime": 1
+    {
+      "id": "3",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/3"
+      },
+      "attributes": {
+        "name": "Cassellie",
+        "slug": "cassellie",
+        "references": [
+          "Cassellie"
+        ],
+        "created-at": "2015-09-22T10:18:34.326+01:00",
+        "updated-at": "2016-07-12T15:29:26.240+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "4",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/4"
+      },
+      "attributes": {
+        "name": "Best Beds",
+        "slug": "bestbeds",
+        "references": [
+          "best-beds"
+        ],
+        "created-at": "2016-01-06T10:04:04.417+00:00",
+        "updated-at": "2016-07-12T14:29:16.440+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "5",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/5"
+      },
+      "attributes": {
+        "name": "Fantastic Furniture",
+        "slug": "fantastic-furniture",
+        "references": [
+          "fantastic-furniture"
+        ],
+        "created-at": "2016-01-06T10:04:24.828+00:00",
+        "updated-at": "2016-07-12T15:29:26.681+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "8",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/8"
+      },
+      "attributes": {
+        "name": "Kaydian",
+        "slug": "kaydian",
+        "references": [
+          "Kaydian"
+        ],
+        "created-at": "2016-01-26T14:31:18.878+00:00",
+        "updated-at": "2016-07-12T14:29:15.966+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "9",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/9"
+      },
+      "attributes": {
+        "name": "Komfi",
+        "slug": "komfi",
+        "references": [
+          "Komfi"
+        ],
+        "created-at": "2016-01-26T14:31:36.845+00:00",
+        "updated-at": "2016-07-12T15:29:27.555+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "10",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/10"
+      },
+      "attributes": {
+        "name": "Limelight",
+        "slug": "limelight",
+        "references": [
+          "Limelight"
+        ],
+        "created-at": "2016-01-26T14:32:21.859+00:00",
+        "updated-at": "2016-07-12T15:38:35.438+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "11",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/11"
+      },
+      "attributes": {
+        "name": "Loft",
+        "slug": "loft",
+        "references": [
+          "Loft"
+        ],
+        "created-at": "2016-01-26T14:32:36.969+00:00",
+        "updated-at": "2016-01-26T14:32:36.969+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "12",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/12"
+      },
+      "attributes": {
+        "name": "LPD",
+        "slug": "lpd",
+        "references": [
+          "LPD"
+        ],
+        "created-at": "2016-01-26T14:32:56.635+00:00",
+        "updated-at": "2016-01-26T14:32:56.635+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "13",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/13"
+      },
+      "attributes": {
+        "name": "Matalan Direct",
+        "slug": "matalan-direct",
+        "references": [
+          "Blind Sample",
+          "Blind Samples"
+        ],
+        "created-at": "2016-01-26T14:33:25.856+00:00",
+        "updated-at": "2016-08-30T15:18:25.967+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "14",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/14"
+      },
+      "attributes": {
+        "name": "Mountrose",
+        "slug": "mountrose",
+        "references": [
+          "Mountrose"
+        ],
+        "created-at": "2016-01-26T14:33:40.943+00:00",
+        "updated-at": "2016-01-26T14:33:40.943+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "15",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/15"
+      },
+      "attributes": {
+        "name": "Phoenox Textiles",
+        "slug": "phoenox-textiles",
+        "references": [
+          "Phoenox Textiles",
+          "pheonox-textiles",
+          "Phoenox"
+        ],
+        "created-at": "2016-01-26T14:34:00.954+00:00",
+        "updated-at": "2016-01-26T14:34:00.954+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "16",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/16"
+      },
+      "attributes": {
+        "name": "Riva",
+        "slug": "riva",
+        "references": [
+          "Riva"
+        ],
+        "created-at": "2016-01-26T14:34:23.277+00:00",
+        "updated-at": "2016-01-26T14:34:23.277+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "17",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/17"
+      },
+      "attributes": {
+        "name": "Silentnight",
+        "slug": "silentnight",
+        "references": [
+          "Silentnight"
+        ],
+        "created-at": "2016-01-26T14:34:49.685+00:00",
+        "updated-at": "2016-01-26T14:34:49.685+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "18",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/18"
+      },
+      "attributes": {
+        "name": "Speedy Products",
+        "slug": "speedy-products",
+        "references": [
+          "Speedy Products",
+          "speedy-products",
+          "Speedy"
+        ],
+        "created-at": "2016-01-26T14:35:01.300+00:00",
+        "updated-at": "2016-01-26T14:35:01.300+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "19",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/19"
+      },
+      "attributes": {
+        "name": "Vogue",
+        "slug": "vogue",
+        "references": [
+          "Vogue"
+        ],
+        "created-at": "2016-01-26T14:35:33.669+00:00",
+        "updated-at": "2016-01-26T14:35:33.669+00:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "20",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/20"
+      },
+      "attributes": {
+        "name": "Ultra",
+        "slug": "ultra",
+        "references": [
+          "Ultra"
+        ],
+        "created-at": "2016-01-26T21:48:28.826+00:00",
+        "updated-at": "2016-10-17T16:29:35.299+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "placeholder",
+        "description": "placeholder",
+        "town": "placeholder",
+        "postcode": "placeholder",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "21",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/21"
+      },
+      "attributes": {
+        "name": "Excel",
+        "slug": "excel",
+        "references": [
+          "Excel"
+        ],
+        "created-at": "2016-02-24T10:37:56.836+00:00",
+        "updated-at": "2016-07-12T14:25:21.972+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "Excel",
+        "description": "Test",
+        "town": "Test",
+        "postcode": "test",
+        "leadtime": 1
+      }
+    },
+    {
+      "id": "22",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/22"
+      },
+      "attributes": {
+        "name": "Decora",
+        "slug": "decora",
+        "references": [
+          "decora",
+          "Decora"
+        ],
+        "created-at": "2016-06-10T09:19:31.259+01:00",
+        "updated-at": "2016-09-29T10:53:55.448+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "Decora",
+        "description": "wfsdf",
+        "town": "werawe",
+        "postcode": "wefwer",
+        "leadtime": 2
+      }
+    },
+    {
+      "id": "23",
+      "type": "vendors",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors/23"
+      },
+      "attributes": {
+        "name": "Birlea",
+        "slug": "birlea",
+        "references": [
+          "Birlea"
+        ],
+        "created-at": "2016-10-05T13:26:58.750+01:00",
+        "updated-at": "2016-10-05T14:53:04.026+01:00",
+        "traffic-lights-enabled": false,
+        "company-name": "Birlea",
+        "description": "Furniture",
+        "town": "A",
+        "postcode": "B",
+        "leadtime": 6
+      }
     }
+  ],
+  "links": {
+    "first": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors?page%5Blimit%5D=20&page%5Boffset%5D=0",
+    "last": "https://vendors-staging.herokuapp.com/api/v1/admin/vendors?page%5Blimit%5D=20&page%5Boffset%5D=0"
   }
-}]
+}

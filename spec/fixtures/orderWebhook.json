@@ -158,17 +158,5 @@
         }
       }
     }]
-  },
-  "shopify": {
-    "packageNumbers": {
-      "SKU1": 1,
-      "SKU2": 3,
-      "SKU3": 5
-    }
-  },
-  "currentMessage": {
-    "SKU1": 1,
-    "SKU2": 3,
-    "SKU3": 5
   }
 }
