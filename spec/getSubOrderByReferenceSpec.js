@@ -15,7 +15,7 @@ describe("Retrieve a sub order", () => {
 
   beforeEach(() => {
     this.message = {
-      body: { reference: "MD1449STAGING" }
+      body: { currentMessage: "MD1449STAGING" }
     }
 
     this.config = {
@@ -51,7 +51,13 @@ describe("Retrieve a sub order", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual(JSON.stringify(getSubOrderByReferenceResponse));
+      expect(passedMessageBody).toEqual({ currentMessage: JSON.stringify(getSubOrderByReferenceResponse), 
+                                          vms: { 
+                                            getSubOrderByReference: { 
+                                              vmsSubOrder: JSON.stringify(getSubOrderByReferenceResponse) 
+                                            } 
+                                          } 
+                                        });
     });
   });
 
@@ -68,7 +74,7 @@ describe("Retrieve a sub order", () => {
 
       this.message = {
         body: {
-          "data": "this is invalid data and will raise an error"
+          vmsSubOrderReference: "this is invalid data and will raise an error"
         }
       }
 

@@ -1,5 +1,4 @@
 "use strict";
-const Promise = require('promise');
 const request = require('request');
 const requestOptions = require('./lib/requestOptions.js');
 
