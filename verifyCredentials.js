@@ -12,6 +12,8 @@ function verify(config, cb) {
       url: `${authenticationHeaders.url}sub-orders`
     });
 
+    console.log(options);
+
     return new Promise((resolve, reject) => {
       request.get(options, (error, response, body) => {
         if (error) {
