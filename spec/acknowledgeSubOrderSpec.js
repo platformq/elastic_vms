@@ -1,8 +1,8 @@
 "use strict";
 
 const acknowledgeSubOrder = require('../lib/actions/acknowledgeSubOrder.js');
-const acknowledgeSubOrderResponse = require('./fixtures/acknowledgeSubOrderResponse.js');
-const acknowledgeSubOrderRequest = require('./fixtures/getSubOrderByReferenceResponse.js');
+const acknowledgeSubOrderResponse = require('./fixtures/acknowledgeSubOrderResponse.json');
+const acknowledgeSubOrderRequest = require('./fixtures/getSubOrderByReferenceResponse.json');
 const elasticio = require('elasticio-node');
 const messages = elasticio.messages;
 // disable requests to the outside world

@@ -1,7 +1,7 @@
 "use strict";
 
 const getSubOrderByReference = require('../lib/actions/getSubOrderByReference.js');
-const getSubOrderByReferenceResponse = require('./fixtures/getSubOrderByReferenceResponse.js');
+const getSubOrderByReferenceResponse = require('./fixtures/getSubOrderByReferenceResponse.json');
 const elasticio = require('elasticio-node');
 const messages = elasticio.messages;
 // disable requests to the outside world
