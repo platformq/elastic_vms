@@ -53,7 +53,11 @@ describe("Retrieve vendors lead times", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual(filterLeadTimes(getVendorsByReferenceResponse));
+      expect(passedMessageBody).toEqual({
+                                          "vms": {
+                                            "leadTimes": filterLeadTimes(getVendorsByReferenceResponse)
+                                          }
+                                        });
     });
   });
 
