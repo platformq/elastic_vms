@@ -23,6 +23,10 @@
     "getSubOrderRecordByReference": {
       "main": "./lib/actions/getSubOrderByReference.js",
       "title": "Retrieves a sub order by order reference"
+    },
+    "getVendorsByReference": {
+      "main": "./lib/actions/getVendorsByReference.js",
+      "title": "Retrieves all vendors by vendor references"
     }
   }
 }

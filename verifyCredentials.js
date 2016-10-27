@@ -7,8 +7,12 @@ module.exports = verify;
 function verify(config, cb) {
   console.log('Verifying credentials...');
 
-  function makeRequest(options) {
-    options.url = `${options.host}sub-orders`
+  function makeRequest(authenticationHeaders) {
+    let options = Object.assign({}, authenticationHeaders, {
+      url: `${authenticationHeaders.url}sub-orders`
+    });
+
+    console.log(options);
 
     return new Promise((resolve, reject) => {
       request.get(options, (error, response, body) => {
@@ -23,9 +27,9 @@ function verify(config, cb) {
 
   function parseResponse(response) {
     if (response.statusCode < 400) {
-      new Promise.resolve();
+      return Promise.resolve();
     } else {
-      new Promise.reject(Error(`Response status code was ${response.statusCode}, should be 2XX/3XX`));
+      return Promise.reject(Error(`Response status code was ${response.statusCode}, should be 2XX/3XX`));
     }
   }
 

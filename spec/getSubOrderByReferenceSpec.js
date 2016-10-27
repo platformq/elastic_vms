@@ -1,9 +1,7 @@
 "use strict";
 
 const getSubOrderByReference = require('../lib/actions/getSubOrderByReference.js');
-const getSubOrderByReferenceResponse = require('./fixtures/getSubOrderByReferenceResponse.json');
-const elasticio = require('elasticio-node');
-const messages = elasticio.messages;
+const getSubOrderByReferenceResponse = require('./fixtures/getOrderReferenceResponse.json');
 // disable requests to the outside world
 const nock = require("nock");
 // nock.recorder.rec();
@@ -20,7 +18,7 @@ describe("Retrieve a sub order", () => {
 
     this.config = {
       host:   "https://vendors-staging.herokuapp.com",
-      apiKey: "1e49232a8044fed348f44aeed1c288c085cc3fa6c550e9626ff61dfef2660ddf"
+      apiKey: "abc123"
     }
   });
 
@@ -51,10 +49,10 @@ describe("Retrieve a sub order", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual({ currentMessage: JSON.stringify(getSubOrderByReferenceResponse), 
+      expect(passedMessageBody).toEqual({ currentMessage: getSubOrderByReferenceResponse, 
                                           vms: { 
                                             getSubOrderByReference: { 
-                                              vmsSubOrder: JSON.stringify(getSubOrderByReferenceResponse) 
+                                              vmsSubOrder: getSubOrderByReferenceResponse 
                                             } 
                                           } 
                                         });
@@ -74,7 +72,7 @@ describe("Retrieve a sub order", () => {
 
       this.message = {
         body: {
-          vmsSubOrderReference: "this is invalid data and will raise an error"
+          vmsSubOrderReference: "this is invalid data and will raise a rebound"
         }
       }
 
@@ -85,10 +83,10 @@ describe("Retrieve a sub order", () => {
       getSubOrderByReference.process.call(this.self, this.message, this.config);
     });
 
-    it("emits an error", () => {
+    it("emits a rebound", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(1);
       let emittedVerb = this.self.emit.calls.argsFor(0)[0];
-      expect(emittedVerb).toEqual('error');
+      expect(emittedVerb).toEqual('rebound');
     });
   });
 });
