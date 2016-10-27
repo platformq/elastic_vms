@@ -22,7 +22,7 @@ describe("Retrieve vendors lead times", () => {
 
     this.config = {
       host:   "https://vendors-staging.herokuapp.com",
-      apiKey: "c91966a95dfdf3f6a446dedc189f49c75827e20f84b30c24d22749810695d86c"
+      apiKey: "abc123"
     }
   });
 

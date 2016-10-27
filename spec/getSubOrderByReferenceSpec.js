@@ -20,7 +20,7 @@ describe("Retrieve a sub order", () => {
 
     this.config = {
       host:   "https://vendors-staging.herokuapp.com",
-      apiKey: "1e49232a8044fed348f44aeed1c288c085cc3fa6c550e9626ff61dfef2660ddf"
+      apiKey: "abc123"
     }
   });
 
