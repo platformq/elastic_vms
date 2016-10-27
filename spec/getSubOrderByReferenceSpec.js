@@ -74,7 +74,7 @@ describe("Retrieve a sub order", () => {
 
       this.message = {
         body: {
-          vmsSubOrderReference: "this is invalid data and will raise an error"
+          vmsSubOrderReference: "this is invalid data and will raise a rebound"
         }
       }
 
@@ -85,10 +85,10 @@ describe("Retrieve a sub order", () => {
       getSubOrderByReference.process.call(this.self, this.message, this.config);
     });
 
-    it("emits an error", () => {
+    it("emits a rebound", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(1);
       let emittedVerb = this.self.emit.calls.argsFor(0)[0];
-      expect(emittedVerb).toEqual('error');
+      expect(emittedVerb).toEqual('rebound');
     });
   });
 });

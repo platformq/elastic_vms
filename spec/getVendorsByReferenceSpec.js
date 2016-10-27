@@ -78,7 +78,7 @@ describe("Retrieve vendors lead times", () => {
       this.message = {
         body: { 
           webhook: {
-            included: ["this is invalid data and will raise an error"]
+            included: ["this is invalid data and will raise a rebound"]
           }
         }
       }
@@ -90,10 +90,10 @@ describe("Retrieve vendors lead times", () => {
       getVendorsByReference.process.call(this.self, this.message, this.config);
     });
 
-    it("emits an error", () => {
+    it("emits a rebound", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(1);
       let emittedVerb = this.self.emit.calls.argsFor(0)[0];
-      expect(emittedVerb).toEqual('error');
+      expect(emittedVerb).toEqual('rebound');
     });
   });
 });
