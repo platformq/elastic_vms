@@ -3,9 +3,7 @@
 const getVendorsByReference = require('../lib/actions/getVendorsByReference.js');
 const orderWebhook = require('./fixtures/orderWebhook.json');
 const getVendorsByReferenceResponse = require('./fixtures/getVendorsResponse.json');
-const elasticio = require('elasticio-node');
 const filterLeadTimes  = require('../lib/getVendorsByReference/filterLeadTimes.js');
-const messages = elasticio.messages;
 // disable requests to the outside world
 const nock = require("nock");
 // nock.recorder.rec();

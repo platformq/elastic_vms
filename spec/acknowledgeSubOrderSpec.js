@@ -3,8 +3,6 @@
 const acknowledgeSubOrder = require('../lib/actions/acknowledgeSubOrder.js');
 const acknowledgeSubOrderResponse = require('./fixtures/acknowledgeSubOrderResponse.json');
 const acknowledgeSubOrderRequest  = require('./fixtures/getOrderReferenceResponse.json');
-const elasticio = require('elasticio-node');
-const messages = elasticio.messages;
 // disable requests to the outside world
 const nock = require("nock");
 nock.disableNetConnect();

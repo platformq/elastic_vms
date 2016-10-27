@@ -2,8 +2,6 @@
 
 const getSubOrderByReference = require('../lib/actions/getSubOrderByReference.js');
 const getSubOrderByReferenceResponse = require('./fixtures/getOrderReferenceResponse.json');
-const elasticio = require('elasticio-node');
-const messages = elasticio.messages;
 // disable requests to the outside world
 const nock = require("nock");
 // nock.recorder.rec();
