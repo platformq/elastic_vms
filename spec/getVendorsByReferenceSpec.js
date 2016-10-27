@@ -11,7 +11,7 @@ const nock = require("nock");
 // nock.recorder.rec();
 nock.disableNetConnect();
 // silence console logs
-// console.log = () => {};
+console.log = () => {};
 
 describe("Retrieve vendors lead times", () => {
 
@@ -43,49 +43,57 @@ describe("Retrieve vendors lead times", () => {
       getVendorsByReference.process.call(this.self, this.message, this.config);
     });
 
-    // it("sends a correct request to a correct VMS endpoint", () => {
-    //   expect(this.getVendorsByReferenceRequest.isDone()).toBe(true);
-    // });
+    it("sends a correct request to a correct VMS endpoint", () => {
+      expect(this.getVendorsByReferenceRequest.isDone()).toBe(true);
+    });
 
     it("emits valid JSON API compliant data", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(1);
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
+      let leadTimes = filterLeadTimes.filterLeadTimes(getVendorsByReferenceResponse);
+
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual({ "currentMessage": filterLeadTimes(getVendorsByReferenceResponse),
+      expect(passedMessageBody).toEqual({ "webhook": orderWebhook.webhook, 
+                                          "currentMessage": leadTimes,
                                           "vms": {
-                                            "leadTimes": filterLeadTimes(getVendorsByReferenceResponse)
+                                            "getVendorsByReference": {
+                                              "leadTimes": leadTimes
+                                            }
                                           }
                                         });
     });
   });
 
-  // describe("Invalid request", () => {
-  //   beforeEach((done) => {
-  //     this.self = {
-  //       emit() { done(); }
-  //     };
+  describe("Invalid request", () => {
+    beforeEach((done) => {
+      this.self = {
+        emit() { done(); }
+      };
 
-  //     this.getVendorsByReferenceRequest = nock('https://vendors-staging.herokuapp.com:443', 
-  //                                         {"encodedQueryParams":true})
-  //                                     .get('/api/v1/admin/vendors')
-  //                                     .query({filter: { references: ["undefined"] }});
+      this.getVendorsByReferenceRequest = nock('https://vendors-staging.herokuapp.com:443', 
+                                          {"encodedQueryParams":true})
+                                      .get('/api/v1/admin/vendors?filter[references]=undefined')
 
-  //     this.message = {
-  //       body: "this is invalid data and will raise an error"
-  //     }
+      this.message = {
+        body: { 
+          webhook: {
+            included: ["this is invalid data and will raise an error"]
+          }
+        }
+      }
 
-  //     spyOn(this.self, "emit").and.callThrough();
+      spyOn(this.self, "emit").and.callThrough();
 
-  //     this.getVendorsByReferenceRequest = this.getVendorsByReferenceRequest.reply(404);
+      this.getVendorsByReferenceRequest = this.getVendorsByReferenceRequest.reply(404);
 
-  //     getVendorsByReference.process.call(this.self, this.message, this.config);
-  //   });
+      getVendorsByReference.process.call(this.self, this.message, this.config);
+    });
 
-  //   it("emits an error", () => {
-  //     expect(this.self.emit).toHaveBeenCalledTimes(1);
-  //     let emittedVerb = this.self.emit.calls.argsFor(0)[0];
-  //     expect(emittedVerb).toEqual('error');
-  //   });
-  // });
+    it("emits an error", () => {
+      expect(this.self.emit).toHaveBeenCalledTimes(1);
+      let emittedVerb = this.self.emit.calls.argsFor(0)[0];
+      expect(emittedVerb).toEqual('error');
+    });
+  });
 });

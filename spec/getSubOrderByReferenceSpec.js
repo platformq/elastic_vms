@@ -51,10 +51,10 @@ describe("Retrieve a sub order", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual({ currentMessage: JSON.stringify(getSubOrderByReferenceResponse), 
+      expect(passedMessageBody).toEqual({ currentMessage: getSubOrderByReferenceResponse, 
                                           vms: { 
                                             getSubOrderByReference: { 
-                                              vmsSubOrder: JSON.stringify(getSubOrderByReferenceResponse) 
+                                              vmsSubOrder: getSubOrderByReferenceResponse 
                                             } 
                                           } 
                                         });
