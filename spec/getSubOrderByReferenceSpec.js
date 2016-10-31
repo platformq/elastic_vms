@@ -13,7 +13,7 @@ describe("Retrieve a sub order", () => {
 
   beforeEach(() => {
     this.message = {
-      body: { currentMessage: "MD1449STAGING" }
+      body: { currentMessage: { orderReference: "MD1449STAGING" } }
     }
 
     this.config = {
