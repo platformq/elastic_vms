@@ -1,3 +1,37 @@
 {
-  "data":{"id":"610","type":"sub-orders","links":{"self":"https://vendors-staging.herokuapp.com/api/v1/sub-orders/610"},"attributes":{"order-id":446,"created-at":"2016-09-08T12:51:43.415+01:00","updated-at":"2016-10-03T16:47:00.789+01:00","acknowledged-at":"2016-10-03T16:47:00.781+01:00","line-items-count":2,"fulfilled-at":null,"acknowledged?":true,"fulfilled?":false,"partially-fulfilled?":false,"reference":"MD1449STAGING"},"relationships":{"line-items":{"links":{"self":"https://vendors-staging.herokuapp.com/api/v1/sub-orders/610/relationships/line-items","related":"https://vendors-staging.herokuapp.com/api/v1/sub-orders/610/line-items"}},"fulfilments":{"links":{"self":"https://vendors-staging.herokuapp.com/api/v1/sub-orders/610/relationships/fulfilments","related":"https://vendors-staging.herokuapp.com/api/v1/sub-orders/610/fulfilments"}}}}
+  "data": {
+    "id": "6",
+    "type": "sub-orders",
+    "links": {
+      "self": "https://vendors-staging.herokuapp.com/api/v1/sub-orders/6"
+    },
+    "attributes": {
+      "order-id": 6,
+      "created-at": "2015-09-17T15:50:10.897+01:00",
+      "updated-at": "2016-11-01T15:52:50.864+00:00",
+      "acknowledged-at": "2016-11-01T15:52:50.855+00:00",
+      "line-items-count": 3,
+      "vendor": "Ultra",
+      "fulfilled-at": null,
+      "acknowledged?": true,
+      "fulfilled?": false,
+      "partially-fulfilled?": true,
+      "reference": "MD1039STAGING",
+      "cancelled-at": null
+    },
+    "relationships": {
+      "line-items": {
+        "links": {
+          "self": "https://vendors-staging.herokuapp.com/api/v1/sub-orders/6/relationships/line-items",
+          "related": "https://vendors-staging.herokuapp.com/api/v1/sub-orders/6/line-items"
+        }
+      },
+      "fulfilments": {
+        "links": {
+          "self": "https://vendors-staging.herokuapp.com/api/v1/sub-orders/6/relationships/fulfilments",
+          "related": "https://vendors-staging.herokuapp.com/api/v1/sub-orders/6/fulfilments"
+        }
+      }
+    }
+  }
 }

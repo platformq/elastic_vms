@@ -28,13 +28,13 @@ describe("Acknowledge a sub order", () => {
     beforeEach((done) => {
       this.acknowledgeSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/sub-orders/610', {
+                                      .patch('/api/v1/sub-orders/6', {
                                          "data": {
                                             "attributes": {
                                               "acknowledge": true
                                             },
                                             "type": "sub-orders",
-                                            "id": 610
+                                            "id": 6
                                           }
                                       });
 

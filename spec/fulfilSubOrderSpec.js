@@ -7,7 +7,7 @@ const fulfilSubOrderRequest  = require('./fixtures/getOrderReferenceResponse.jso
 const nock = require("nock");
 nock.disableNetConnect();
 // silence console logs
-// console.log = () => {};
+console.log = () => {};
 
 describe("Fulfills a sub order", () => {
 
@@ -20,7 +20,7 @@ describe("Fulfills a sub order", () => {
 
     this.config = {
       host:   "https://vendors-staging.herokuapp.com",
-      apiKey: "7073e3a7714217ed8561795c9e4583bff1ae2cd35f1d6e117a7c25f90f8e2566"
+      apiKey: "123"
     }
   });
 

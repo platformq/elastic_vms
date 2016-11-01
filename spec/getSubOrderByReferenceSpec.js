@@ -13,7 +13,7 @@ describe("Retrieve a sub order", () => {
 
   beforeEach(() => {
     this.message = {
-      body: { currentMessage: { orderReference: "MD1449STAGING" } }
+      body: { currentMessage: { orderReference: "MD1039STAGING" } }
     }
 
     this.config = {
@@ -27,7 +27,7 @@ describe("Retrieve a sub order", () => {
       this.getSubOrderByReferenceRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
                                       .get('/api/v1/sub-orders')
-                                      .query({filter: { reference: "MD1449STAGING" }});
+                                      .query({filter: { reference: "MD1039STAGING" }, include: 'line-items'});
 
       this.self = {
         emit() { done(); }
