@@ -49,7 +49,7 @@ describe("Retrieve vendors lead times", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(1);
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
-      let leadTimes = filterLeadTimes.filterLeadTimes(getVendorsByReferenceResponse);
+      let leadTimes = filterLeadTimes.filterLeadTimes({ body: getVendorsByReferenceResponse });
 
       expect(passedMessageVerb).toEqual('data');
       expect(passedMessageBody).toEqual({ "webhook": orderWebhook.webhook, 
