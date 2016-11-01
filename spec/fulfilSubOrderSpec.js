@@ -1,20 +1,21 @@
 "use strict";
 
-const acknowledgeSubOrder = require('../lib/actions/acknowledgeSubOrder.js');
-const acknowledgeSubOrderResponse = require('./fixtures/acknowledgeSubOrderResponse.json');
-const acknowledgeSubOrderRequest  = require('./fixtures/getOrderReferenceResponse.json');
+const fulfilSubOrder = require('../lib/actions/fulfilSubOrder.js');
+const fulfilSubOrderResponse = require('./fixtures/fulfilSubOrderResponse.json');
+const fulfilSubOrderRequest  = require('./fixtures/getOrderReferenceResponse.json');
 // disable requests to the outside world
 const nock = require("nock");
-nock.disableNetConnect();
+nock.recorder.rec();
+// nock.disableNetConnect();
 // silence console logs
-console.log = () => {};
+// console.log = () => {};
 
-describe("Acknowledge a sub order", () => {
+describe("Fulfills a sub order", () => {
 
   beforeEach(() => {
     this.message = {
       body: {
-        currentMessage: acknowledgeSubOrderRequest
+        currentMessage: fulfilSubOrderRequest
       }
     }
 
@@ -28,7 +29,7 @@ describe("Acknowledge a sub order", () => {
     beforeEach((done) => {
       this.acknowledgeSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/sub-orders/610', {
+                                      .patch('/api/v1/fulfilments', {
                                          "data": {
                                             "attributes": {
                                               "acknowledge": true
@@ -44,13 +45,13 @@ describe("Acknowledge a sub order", () => {
 
       spyOn(this.self, "emit").and.callThrough();
 
-      this.acknowledgeSubOrderRequest = this.acknowledgeSubOrderRequest.reply(200, acknowledgeSubOrderResponse);
+      this.fulfilSubOrderRequest = this.fulfilSubOrderRequest.reply(200, fulfilSubOrderResponse);
 
-      acknowledgeSubOrder.process.call(this.self, this.message, this.config);
+      fulfilSubOrder.process.call(this.self, this.message, this.config);
     });
 
     it("sends a correct request to a correct VMS endpoint", () => {
-      expect(this.acknowledgeSubOrderRequest.isDone()).toBe(true);
+      expect(this.fulfilSubOrderRequest.isDone()).toBe(true);
     });
 
     it("emits valid JSON API compliant data", () => {
@@ -58,10 +59,10 @@ describe("Acknowledge a sub order", () => {
       let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
       let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
       expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual({ currentMessage: acknowledgeSubOrderResponse,
+      expect(passedMessageBody).toEqual({ currentMessage: fulfilSubOrderResponse,
                                           vms: {
-                                            acknowledgeSubOrder: {
-                                              vmsSubOrderAcknowledgement: acknowledgeSubOrderResponse
+                                            fulfilSubOrder: {
+                                              vmsSubOrderFulfilment: fulfilSubOrderResponse
                                             }
                                           }
                                         });
@@ -74,9 +75,9 @@ describe("Acknowledge a sub order", () => {
         emit() { done(); }
       };
 
-      this.acknowledgeSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
+      this.fulfilSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/sub-orders/undefined');
+                                      .patch('/api/v1/fulfilments');
 
       this.message = {
         body: {
@@ -86,9 +87,9 @@ describe("Acknowledge a sub order", () => {
 
       spyOn(this.self, "emit").and.callThrough();
 
-      this.acknowledgeSubOrderRequest = this.acknowledgeSubOrderRequest.reply(404);
+      this.fulfilSubOrderRequest = this.fulfilSubOrderRequest.reply(404);
 
-      acknowledgeSubOrder.process.call(this.self, this.message, this.config);
+      fulfilSubOrder.process.call(this.self, this.message, this.config);
     });
 
     it("emits a rebound", () => {
