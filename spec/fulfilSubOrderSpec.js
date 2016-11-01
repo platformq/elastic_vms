@@ -35,7 +35,10 @@ describe("Fulfills a sub order", () => {
                                               "tracking-company":"",
                                               "tracking-url":"",
                                               "tracking-number":"",
-                                              "fulfilment-lines-attributes":[]
+                                              "fulfilment-lines-attributes":[
+                                                { 'line-item-id': 12, quantity: 1 },
+                                                { 'line-item-id': 11, quantity: 1 },
+                                                { 'line-item-id': 10, quantity: 1 }]
                                             },
                                             "type":"fulfilments"}
                                           });
@@ -78,12 +81,10 @@ describe("Fulfills a sub order", () => {
 
       this.fulfilSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/fulfilments');
+                                      .post('/api/v1/fulfilments');
 
       this.message = {
-        body: {
-          "data": "this is invalid data and will raise a rebound"
-        }
+        body: "this is invalid data and will raise a rebound"
       }
 
       spyOn(this.self, "emit").and.callThrough();
