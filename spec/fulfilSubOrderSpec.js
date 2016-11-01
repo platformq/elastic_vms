@@ -5,8 +5,7 @@ const fulfilSubOrderResponse = require('./fixtures/fulfilSubOrderResponse.json')
 const fulfilSubOrderRequest  = require('./fixtures/getOrderReferenceResponse.json');
 // disable requests to the outside world
 const nock = require("nock");
-nock.recorder.rec();
-// nock.disableNetConnect();
+nock.disableNetConnect();
 // silence console logs
 // console.log = () => {};
 
@@ -21,23 +20,25 @@ describe("Fulfills a sub order", () => {
 
     this.config = {
       host:   "https://vendors-staging.herokuapp.com",
-      apiKey: "abc123"
+      apiKey: "7073e3a7714217ed8561795c9e4583bff1ae2cd35f1d6e117a7c25f90f8e2566"
     }
   });
 
   describe("Valid request", () => {
     beforeEach((done) => {
-      this.acknowledgeSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
+      this.fulfilSubOrderRequest = nock('https://vendors-staging.herokuapp.com:443', 
                                           {"encodedQueryParams":true})
-                                      .patch('/api/v1/fulfilments', {
-                                         "data": {
-                                            "attributes": {
-                                              "acknowledge": true
+                                      .post('/api/v1/fulfilments', 
+                                          {"data":{
+                                            "attributes":{
+                                              "order-id":6,
+                                              "tracking-company":"",
+                                              "tracking-url":"",
+                                              "tracking-number":"",
+                                              "fulfilment-lines-attributes":[]
                                             },
-                                            "type": "sub-orders",
-                                            "id": 610
-                                          }
-                                      });
+                                            "type":"fulfilments"}
+                                          });
 
       this.self = {
         emit() { done(); }
