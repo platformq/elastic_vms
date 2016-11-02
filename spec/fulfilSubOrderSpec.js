@@ -84,7 +84,7 @@ describe("Fulfills a sub order", () => {
                                       .post('/api/v1/fulfilments');
 
       this.message = {
-        body: "this is invalid data and will raise a rebound"
+        body: { currentMessage: { data: "this is invalid data and will raise a rebound"}}
       }
 
       spyOn(this.self, "emit").and.callThrough();
