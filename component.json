@@ -20,6 +20,10 @@
       "main": "./lib/actions/acknowledgeSubOrder.js",
       "title": "Acknowledges a sub order by id"
     },
+    "fulfilSubOrder": {
+      "main": "./lib/actions/fulfilSubOrder.js",
+      "title": "Fulfils a sub order by id"
+    },
     "getSubOrderRecordByReference": {
       "main": "./lib/actions/getSubOrderByReference.js",
       "title": "Retrieves a sub order by order reference"
