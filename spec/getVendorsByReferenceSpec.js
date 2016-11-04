@@ -9,7 +9,7 @@ const nock = require("nock");
 // nock.recorder.rec();
 nock.disableNetConnect();
 // silence console logs
-// console.log = () => {};
+console.log = () => {};
 
 describe("Retrieve vendors lead times", () => {
 
