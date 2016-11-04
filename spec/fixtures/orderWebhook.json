@@ -30,14 +30,14 @@
       }
     },
     "included": [{
-      "id": "0",
+      "id": "1",
       "type": "line-items",
       "links": {
-        "self": "/api/v1/line-items/0"
+        "self": "/api/v1/line-items/1"
       },
       "attributes": {
         "name": "Example name",
-        "sku": "SKU1",
+        "sku": "ITEM0000",
         "quantity": 1,
         "quantity-fulfilled": 0,
         "properties": [],
@@ -48,26 +48,26 @@
       "relationships": {
         "sub-order": {
           "links": {
-            "self": "/api/v1/line-items/0/relationships/sub-order",
-            "related": "/api/v1/line-items/0/sub-order"
+            "self": "/api/v1/line-items/1/relationships/sub-order",
+            "related": "/api/v1/line-items/1/sub-order"
           }
         },
         "fulfilment-lines": {
           "links": {
-            "self": "/api/v1/line-items/0/relationships/fulfilment-lines",
-            "related": "/api/v1/line-items/0/fulfilment-lines"
+            "self": "/api/v1/line-items/1/relationships/fulfilment-lines",
+            "related": "/api/v1/line-items/1/fulfilment-lines"
           }
         }
       }
     }, {
-      "id": "1",
+      "id": "2",
       "type": "line-items",
       "links": {
-        "self": "/api/v1/line-items/0"
+        "self": "/api/v1/line-items/2"
       },
       "attributes": {
         "name": "Example name",
-        "sku": "SKU2",
+        "sku": "ITEM0001",
         "quantity": 1,
         "quantity-fulfilled": 0,
         "properties": [],
@@ -78,26 +78,26 @@
       "relationships": {
         "sub-order": {
           "links": {
-            "self": "/api/v1/line-items/0/relationships/sub-order",
-            "related": "/api/v1/line-items/0/sub-order"
+            "self": "/api/v1/line-items/2/relationships/sub-order",
+            "related": "/api/v1/line-items/2/sub-order"
           }
         },
         "fulfilment-lines": {
           "links": {
-            "self": "/api/v1/line-items/0/relationships/fulfilment-lines",
-            "related": "/api/v1/line-items/0/fulfilment-lines"
+            "self": "/api/v1/line-items/2/relationships/fulfilment-lines",
+            "related": "/api/v1/line-items/2/fulfilment-lines"
           }
         }
       }
     }, {
-      "id": "2",
+      "id": "3",
       "type": "line-items",
       "links": {
-        "self": "/api/v1/line-items/0"
+        "self": "/api/v1/line-items/3"
       },
       "attributes": {
         "name": "Example name",
-        "sku": "SKU3",
+        "sku": "ITEM0002",
         "quantity": 1,
         "quantity-fulfilled": 0,
         "properties": [],
@@ -108,14 +108,14 @@
       "relationships": {
         "sub-order": {
           "links": {
-            "self": "/api/v1/line-items/0/relationships/sub-order",
-            "related": "/api/v1/line-items/0/sub-order"
+            "self": "/api/v1/line-items/3/relationships/sub-order",
+            "related": "/api/v1/line-items/3/sub-order"
           }
         },
         "fulfilment-lines": {
           "links": {
-            "self": "/api/v1/line-items/0/relationships/fulfilment-lines",
-            "related": "/api/v1/line-items/0/fulfilment-lines"
+            "self": "/api/v1/line-items/3/relationships/fulfilment-lines",
+            "related": "/api/v1/line-items/3/fulfilment-lines"
           }
         }
       }
@@ -158,5 +158,12 @@
         }
       }
     }]
+  },
+  "shopify": {
+    "packageNumbers": {
+      "ITEM0000": 1,
+      "ITEM0001": 3,
+      "ITEM0002": 5
+    }
   }
 }

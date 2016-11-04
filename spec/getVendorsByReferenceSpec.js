@@ -9,7 +9,7 @@ const nock = require("nock");
 // nock.recorder.rec();
 nock.disableNetConnect();
 // silence console logs
-console.log = () => {};
+// console.log = () => {};
 
 describe("Retrieve vendors lead times", () => {
 
@@ -53,6 +53,7 @@ describe("Retrieve vendors lead times", () => {
 
       expect(passedMessageVerb).toEqual('data');
       expect(passedMessageBody).toEqual({ "webhook": orderWebhook.webhook, 
+                                          "shopify": { packageNumbers: { ITEM0000: 1, ITEM0001: 3, ITEM0002: 5 } },
                                           "currentMessage": leadTimes,
                                           "vms": {
                                             "getVendorsByReference": {

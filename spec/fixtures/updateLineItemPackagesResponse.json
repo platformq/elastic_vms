@@ -1,0 +1,36 @@
+{
+  "data": {
+    "id": "22",
+    "type": "line-items",
+    "links": {
+      "self": "https://vendors-staging.herokuapp.com/api/v1/line-items/22"
+    },
+    "attributes": {
+      "name": "Essentials 10mm Wetroom Panel - 700",
+      "sku": "TP070",
+      "quantity": 1,
+      "vendor": "Cassellie",
+      "remote-variant-id": "Not Present",
+      "quantity-fulfilled": 0,
+      "properties": [],
+      "quantity-unfulfilled": 1,
+      "fulfilled?": false,
+      "product-id": null,
+      "packages": 1
+    },
+    "relationships": {
+      "sub-order": {
+        "links": {
+          "self": "https://vendors-staging.herokuapp.com/api/v1/line-items/22/relationships/sub-order",
+          "related": "https://vendors-staging.herokuapp.com/api/v1/line-items/22/sub-order"
+        }
+      },
+      "fulfilment-lines": {
+        "links": {
+          "self": "https://vendors-staging.herokuapp.com/api/v1/line-items/22/relationships/fulfilment-lines",
+          "related": "https://vendors-staging.herokuapp.com/api/v1/line-items/22/fulfilment-lines"
+        }
+      }
+    }
+  }
+}
