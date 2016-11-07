@@ -5,9 +5,9 @@
   "scripts": {
     "test": "jasmine"
   },
-  "engines" : { 
+  "engines": {
     "node": "7.0.0",
-    "npm": "3.10.8" 
+    "npm": "3.10.8"
   },
   "main": "index.js",
   "repository": {
@@ -22,6 +22,7 @@
   "homepage": "https://github.com/platformq/elastic_vms#readme",
   "dependencies": {
     "elasticio-node": "0.0.7",
+    "node-fetch": "^1.6.3",
     "promise": "^7.1.1",
     "request": "^2.75.0"
   },
