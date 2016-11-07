@@ -31,6 +31,10 @@
     "getVendorsByReference": {
       "main": "./lib/actions/getVendorsByReference.js",
       "title": "Retrieves all vendors by vendor references"
+    },
+    "updateLineItemPackages": {
+      "main": "./lib/actions/updateLineItemPackages.js",
+      "title": "Update line item packages"
     }
   }
 }
