@@ -1,6 +1,6 @@
 "use strict";
 
-const updateOrder = require('../lib/actions/updateOrder.js').process;
+const updateConsignmentReference = require('../lib/actions/updateConsignmentReference.js').process;
 const nock = require('nock');
 
 nock.disableNetConnect();
@@ -8,7 +8,7 @@ nock.disableNetConnect();
 console.log = () => {};
 
 // fixtures
-const input = require('./fixtures/updateOrder/input.json');
+const input = require('./fixtures/updateConsignmentReference/input.json');
 
 describe("Updating an order", () => {
   beforeEach(() => {
@@ -42,7 +42,7 @@ describe("Updating an order", () => {
 
       this.updateOrderRequest = this.updateOrderRequest.reply(200, {});
 
-      updateOrder.call(this.self, this.msg, this.cfg);
+      updateConsignmentReference.call(this.self, this.msg, this.cfg);
     });
 
     it("Sends a request to the VMS", () => {
@@ -70,7 +70,7 @@ describe("Updating an order", () => {
       this.updateOrderRequest = nock('https://vendors-staging.herokuapp.com')
         .patch('/api/v1/orders/123').reply(500);
 
-      updateOrder.call(this.self, this.msg, this.cfg);
+      updateConsignmentReference.call(this.self, this.msg, this.cfg);
     });
 
     it("Emits rebound", () => {
