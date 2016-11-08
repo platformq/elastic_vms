@@ -35,6 +35,10 @@
     "updateLineItemPackages": {
       "main": "./lib/actions/updateLineItemPackages.js",
       "title": "Update line item packages"
+    },
+    "updateConsignmentReference": {
+      "main": "./lib/actions/updateConsignmentReference.js",
+      "title": "Update consignment reference"
     }
   }
 }
