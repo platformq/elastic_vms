@@ -1,7 +1,7 @@
 "use strict";
 const request        = require('request');
-const requestOptions = require('../requestOptions.js');
-const handleResponse = require('../handleResponse.js');
+const requestOptions = require('../lib/requestOptions.js');
+const handleResponse = require('../lib/handleResponse.js');
 
 exports.process = processAction;
 
