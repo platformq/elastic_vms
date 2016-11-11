@@ -51,8 +51,12 @@ describe("Updating order status", () => {
       expect(this.updateOrderRequest.isDone()).toEqual(true);
     });
 
+    it("Emits data", () => {
+      expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
+    });
+
     it("Emits end", () => {
-      expect(this.self.emit).toHaveBeenCalledTimes(1);
+      expect(this.self.emit).toHaveBeenCalledTimes(2);
       expect(this.self.emit).toHaveBeenCalledWith('end');
     });
   });
