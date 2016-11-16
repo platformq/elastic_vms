@@ -1,0 +1,28 @@
+{
+    "currentMessage": {
+        "attributes": {
+            "inventory-quantity": 1022,
+            "sku": "CL9Q"
+        },
+        "id": "6033",
+        "links": {
+            "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6033"
+        },
+        "type": "variants"
+    },
+    "vms": {
+        "getVariantsBySku": {
+            "vmsVariant": {
+                "attributes": {
+                    "inventory-quantity": 1022,
+                    "sku": "CL9Q"
+                },
+                "id": "6033",
+                "links": {
+                    "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6033"
+                },
+                "type": "variants"
+            }
+        }
+    }
+}

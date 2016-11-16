@@ -32,9 +32,17 @@
       "main": "./lib/actions/getVendorsByReference.js",
       "title": "Retrieves all vendors by vendor references"
     },
+    "getVariantsBySku": {
+      "main": "./lib/actions/getVariantsBySku.js",
+      "title": "Retrieves all variants from a list of SKUs"
+    },
     "updateLineItemPackages": {
       "main": "./lib/actions/updateLineItemPackages.js",
       "title": "Update line item packages"
+    },
+    "updateVariantInventory": {
+      "main": "./lib/actions/updateVariantInventory.js",
+      "title": "Update inventory of a line item"
     },
     "updateConsignmentReference": {
       "main": "./lib/actions/updateConsignmentReference.js",
