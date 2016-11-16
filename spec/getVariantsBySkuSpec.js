@@ -4,6 +4,7 @@ const getVariantsBySku = require('../lib/actions/getVariantsBySku.js');
 const getVariantsBySkuRequest  = require('./fixtures/getVariantsBySku/skus.json');
 const getVariantsBySkuResponse = require('./fixtures/getVariantsBySku/response.json');
 const result = require('./fixtures/getVariantsBySku/result.json');
+const result2 = require('./fixtures/getVariantsBySku/result2.json');
 // disable requests to the outside world
 const nock = require("nock");
 nock.disableNetConnect();
@@ -33,7 +34,7 @@ describe("Fulfills a sub order", () => {
                                       .get('/api/v1/variants?filter[sku]=1517001,ACP001,ALB001,ARMRD,BFD70,BFD90,CHI005-RH,CL9Q,CS030&fields[variants]=sku,inventory-quantity');
 
       this.self = {
-        emit() { done(); }
+        emit(action) { if (action == 'end') done(); }
       };
 
       spyOn(this.self, "emit").and.callThrough();
@@ -43,17 +44,11 @@ describe("Fulfills a sub order", () => {
       getVariantsBySku.process.call(this.self, this.message, this.config);
     });
 
-    it("sends a correct request to a correct VMS endpoint", () => {
-      expect(this.getVariantsRequest.isDone()).toBe(true);
-    });
-
     it("emits valid JSON API compliant data", () => {
-      expect(this.self.emit).toHaveBeenCalledTimes(1);
-      let passedMessageVerb = this.self.emit.calls.argsFor(0)[0];
-      let passedMessageBody = this.self.emit.calls.argsFor(0)[1].body;
-      expect(passedMessageVerb).toEqual('data');
-      expect(passedMessageBody).toEqual(result);
-      expect(passedMessageBody.currentMessage.length).toEqual(7);
+      expect(this.self.emit).toHaveBeenCalledTimes(8);
+      expect(this.self.emit.calls.argsFor(0)[1].body).toEqual(result);
+      expect(this.self.emit.calls.argsFor(3)[1].body).toEqual(result2);
+      expect(this.self.emit).toHaveBeenCalledWith('end');
     });
   });
 

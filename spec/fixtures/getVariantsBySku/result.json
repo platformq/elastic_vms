@@ -1,164 +1,28 @@
 {
-    "currentMessage": [
-        {
-            "attributes": {
-                "inventory-quantity": 1022,
-                "sku": "CL9Q"
-            },
-            "id": "6033",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6033"
-            },
-            "type": "variants"
+    "currentMessage": {
+        "attributes": {
+            "inventory-quantity": 1022,
+            "sku": "CL9Q"
         },
-        {
-            "attributes": {
-                "inventory-quantity": 212,
-                "sku": "BFD70"
-            },
-            "id": "6534",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6534"
-            },
-            "type": "variants"
+        "id": "6033",
+        "links": {
+            "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6033"
         },
-        {
-            "attributes": {
-                "inventory-quantity": 104,
-                "sku": "BFD90"
-            },
-            "id": "6540",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6540"
-            },
-            "type": "variants"
-        },
-        {
-            "attributes": {
-                "inventory-quantity": 2174,
-                "sku": "ACP001"
-            },
-            "id": "9369",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/9369"
-            },
-            "type": "variants"
-        },
-        {
-            "attributes": {
-                "inventory-quantity": 585,
-                "sku": "1517001"
-            },
-            "id": "9797",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/9797"
-            },
-            "type": "variants"
-        },
-        {
-            "attributes": {
-                "inventory-quantity": 1638,
-                "sku": "ARMRD"
-            },
-            "id": "10013",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/10013"
-            },
-            "type": "variants"
-        },
-        {
-            "attributes": {
-                "inventory-quantity": -1,
-                "sku": "CHI005-RH"
-            },
-            "id": "10815",
-            "links": {
-                "self": "https://vendors-staging.herokuapp.com/api/v1/variants/10815"
-            },
-            "type": "variants"
-        }
-    ],
+        "type": "variants"
+    },
     "vms": {
         "getVariantsBySku": {
-            "vmsVariants": [
-                {
-                    "attributes": {
-                        "inventory-quantity": 1022,
-                        "sku": "CL9Q"
-                    },
-                    "id": "6033",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6033"
-                    },
-                    "type": "variants"
+            "vmsVariant": {
+                "attributes": {
+                    "inventory-quantity": 1022,
+                    "sku": "CL9Q"
                 },
-                {
-                    "attributes": {
-                        "inventory-quantity": 212,
-                        "sku": "BFD70"
-                    },
-                    "id": "6534",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6534"
-                    },
-                    "type": "variants"
+                "id": "6033",
+                "links": {
+                    "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6033"
                 },
-                {
-                    "attributes": {
-                        "inventory-quantity": 104,
-                        "sku": "BFD90"
-                    },
-                    "id": "6540",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/6540"
-                    },
-                    "type": "variants"
-                },
-                {
-                    "attributes": {
-                        "inventory-quantity": 2174,
-                        "sku": "ACP001"
-                    },
-                    "id": "9369",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/9369"
-                    },
-                    "type": "variants"
-                },
-                {
-                    "attributes": {
-                        "inventory-quantity": 585,
-                        "sku": "1517001"
-                    },
-                    "id": "9797",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/9797"
-                    },
-                    "type": "variants"
-                },
-                {
-                    "attributes": {
-                        "inventory-quantity": 1638,
-                        "sku": "ARMRD"
-                    },
-                    "id": "10013",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/10013"
-                    },
-                    "type": "variants"
-                },
-                {
-                    "attributes": {
-                        "inventory-quantity": -1,
-                        "sku": "CHI005-RH"
-                    },
-                    "id": "10815",
-                    "links": {
-                        "self": "https://vendors-staging.herokuapp.com/api/v1/variants/10815"
-                    },
-                    "type": "variants"
-                }
-            ]
+                "type": "variants"
+            }
         }
     }
 }
