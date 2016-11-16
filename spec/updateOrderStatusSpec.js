@@ -5,7 +5,7 @@ const nock = require('nock');
 
 nock.disableNetConnect();
 
-console.log = () => {};
+// console.log = () => {};
 
 // fixtures
 const input = require('./fixtures/updateOrderStatus/input.json');
@@ -52,6 +52,7 @@ describe("Updating order status", () => {
     });
 
     it("Emits data", () => {
+      console.log(this.self.emit.calls.argsFor(0)[1].body.vms.updateOrderStatus.data);
       expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
     });
 
