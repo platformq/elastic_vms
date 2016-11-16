@@ -85,7 +85,7 @@ describe("Acknowledge a sub order", () => {
     it("emits a rebound", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(1);
       let emittedVerb = this.self.emit.calls.argsFor(0)[0];
-      expect(emittedVerb).toEqual('rebound');
+      expect(emittedVerb).toEqual('error');
     });
   });
 });
