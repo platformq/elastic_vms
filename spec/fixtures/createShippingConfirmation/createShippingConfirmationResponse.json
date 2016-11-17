@@ -1,0 +1,17 @@
+{
+  "data": {
+    "id": "1",
+    "type": "shipping-confirmations",
+    "links": {
+      "self": "http://localhost:5200/api/v1/admin/shipping-confirmations/1"
+    },
+    "attributes": {
+      "order-id": 565,
+      "carrier-service": "DPD Next Day",
+      "tracking-id": "JD0002234001000062",
+      "tracking-url": "",
+      "sent-text-confirmation-at": null,
+      "sent-email-confirmation-at": null
+    }
+  }
+}

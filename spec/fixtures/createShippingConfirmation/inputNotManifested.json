@@ -1,0 +1,114 @@
+{
+  "webhook": {
+    "ConsignmentReference": "EC-000-00A-K9G",
+    "ConsignmentReferenceProvidedByCustomer": "MATDIR12345",
+    "ConsignmentTrackingReference": "JD0002234001000062",
+    "ConsignmentState": "InTransit",
+    "Packages": [
+      {
+        "Reference": "EP-000-00F-87T",
+        "TrackingDetails": [
+          {
+            "Leg": 1,
+            "TrackingReference": "JD0002234001000063"
+          }
+        ]
+      }
+    ],
+    "ConsignmentLegs": [
+      {
+        "Leg": 1,
+        "TrackingReference": "JD0002234001000063",
+        "CarrierReference": "YDL",
+        "CarrierName": "YDL"
+      }
+    ],
+    "CarrierServiceReference": "MPD_DPDND",
+    "CarrierServiceName": "DPD Next Day",
+    "EarliestDeliveryDate": "2016-11-05T00:00:00+00:00",
+    "LatestDeliveryDate": "2016-11-05T23:59:00+00:00",
+    "DateDelivered": null
+  },
+  "vms": {
+    "updateOrderStatus": {
+      "data": {
+        "id": "565",
+        "type": "orders",
+        "links": {
+          "self": "https://vendors-staging.herokuapp.com/api/v1/orders/565"
+        },
+        "attributes": {
+          "reference": "MD1500STAGING",
+          "remote-id": "4162349070",
+          "created-at": "2016-11-11T09:42:57.618+00:00",
+          "updated-at": "2016-11-11T10:31:46.858+00:00",
+          "placed-at": "2016-11-11T09:42:56.000+00:00",
+          "fraudulent-order": false,
+          "despatched-at": null,
+          "cancelled-at": "2016-11-11T10:04:32.000+00:00",
+          "company": "Matalan Direct",
+          "first-name": "Gordon",
+          "last-name": "Mcleod",
+          "address-line-1": "5 Belle Vue Court",
+          "address-line-2": "",
+          "city": "Leeds",
+          "country-code": "GB",
+          "postcode": "LS31EU",
+          "phone": "07928276486",
+          "email": "gordon.mcleod@matalandirect.com",
+          "consignment-reference": "EC-000-00A-K9G",
+          "delivery-code": null,
+          "dms-status": "In transit"
+        },
+        "relationships": {
+          "sub-orders": {
+            "links": {
+              "self": "https://vendors-staging.herokuapp.com/api/v1/orders/565/relationships/sub-orders",
+              "related": "https://vendors-staging.herokuapp.com/api/v1/orders/565/sub-orders"
+            }
+          }
+        }
+      }
+    }
+  },
+  "currentMessage": {
+    "data": {
+      "id": "565",
+      "type": "orders",
+      "links": {
+        "self": "https://vendors-staging.herokuapp.com/api/v1/orders/565"
+      },
+      "attributes": {
+        "reference": "MD1500STAGING",
+        "remote-id": "4162349070",
+        "created-at": "2016-11-11T09:42:57.618+00:00",
+        "updated-at": "2016-11-11T10:31:46.858+00:00",
+        "placed-at": "2016-11-11T09:42:56.000+00:00",
+        "fraudulent-order": false,
+        "despatched-at": null,
+        "cancelled-at": "2016-11-11T10:04:32.000+00:00",
+        "company": "Matalan Direct",
+        "first-name": "Gordon",
+        "last-name": "Mcleod",
+        "address-line-1": "5 Belle Vue Court",
+        "address-line-2": "",
+        "city": "Leeds",
+        "country-code": "GB",
+        "postcode": "LS31EU",
+        "phone": "07928276486",
+        "email": "gordon.mcleod@matalandirect.com",
+        "consignment-reference": "EC-000-00A-K9G",
+        "delivery-code": null,
+        "dms-status": "In transit"
+      },
+      "relationships": {
+        "sub-orders": {
+          "links": {
+            "self": "https://vendors-staging.herokuapp.com/api/v1/orders/565/relationships/sub-orders",
+            "related": "https://vendors-staging.herokuapp.com/api/v1/orders/565/sub-orders"
+          }
+        }
+      }
+    }
+  }
+}
