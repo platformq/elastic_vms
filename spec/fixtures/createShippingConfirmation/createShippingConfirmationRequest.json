@@ -1,0 +1,10 @@
+{
+  "data": {
+    "type": "shippingConfirmations",
+    "attributes": {
+      "order-id": 565,
+      "carrier-service": "DPD Next Day",
+      "tracking-id": "JD0002234001000062"
+    }
+  }
+}

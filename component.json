@@ -51,6 +51,10 @@
     "updateOrderStatus": {
       "main": "./lib/actions/updateOrderStatus.js",
       "title": "Update order status"
+    },
+    "createShippingConfirmation": {
+      "main": "./lib/actions/createShippingConfirmation.js",
+      "title": "Create shipping confirmation"
     }
   }
 }
