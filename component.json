@@ -42,7 +42,7 @@
     },
     "updateVariantInventory": {
       "main": "./lib/actions/updateVariantInventory.js",
-      "title": "Update inventory of a line item"
+      "title": "Update inventory of a varaint"
     },
     "updateConsignmentReference": {
       "main": "./lib/actions/updateConsignmentReference.js",
