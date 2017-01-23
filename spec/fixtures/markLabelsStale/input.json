@@ -1,0 +1,603 @@
+{
+  "currentMessage": [
+    {
+      "ApiLinks": [
+        {
+          "Href": "https://api.electioapp.com/consignments/EC-000-050-S3F",
+          "Rel": "detail"
+        },
+        {
+          "Href": "https://api.electioapp.com/labels/EC-000-050-S3F",
+          "Rel": "label"
+        }
+      ],
+      "Data": "EC-000-050-S3F",
+      "IsSuccess": true,
+      "Message": "Consignment EC-000-050-S3F has been successfully allocated with Hermes Collection for shipping on 30/01/2017 00:00:00 +00:00"
+    }
+  ],
+  "electio": {
+    "allocateConsignment": [
+      {
+        "ApiLinks": [
+          {
+            "Href": "https://api.electioapp.com/consignments/EC-000-050-S3F",
+            "Rel": "detail"
+          },
+          {
+            "Href": "https://api.electioapp.com/labels/EC-000-050-S3F",
+            "Rel": "label"
+          }
+        ],
+        "Data": "EC-000-050-S3F",
+        "IsSuccess": true,
+        "Message": "Consignment EC-000-050-S3F has been successfully allocated with Hermes Collection for shipping on 30/01/2017 00:00:00 +00:00"
+      }
+    ]
+  },
+  "hook": {
+    "getDeliveryMethods": {
+      "ITEM0000": "PARCEL",
+      "ITEM0001": "PARCEL",
+      "ITEM0002": "PARCEL",
+      "ITEM0003": "PARCEL",
+      "ITEM0004": "PARCEL"
+    }
+  },
+  "shopify": {
+    "packageNumbers": {
+      "ITEM0004": 2
+    },
+    "variantDeliveryTypes": {}
+  },
+  "webhook": {
+    "data": {
+      "attributes": {
+        "address-line-1": "1 Test Street",
+        "address-line-2": "Test Line 2",
+        "cancelled-at": null,
+        "city": null,
+        "company": null,
+        "consignment-reference": "EC-000-050-S3F",
+        "country-code": "GB",
+        "created-at": "2016-12-13T09:58:30.202+00:00",
+        "delivery-code": "PALLET_2017-01-31",
+        "despatched-at": null,
+        "dms-status": "Not received",
+        "email": "jane@example.com",
+        "first-name": "Jane",
+        "fraudulent-order": false,
+        "last-name": "Smith",
+        "phone": "07930123123",
+        "placed-at": "2017-01-30T13:34:28.246+00:00",
+        "postcode": "LS987FD",
+        "reference": "ABC172",
+        "remote-id": "1234567172",
+        "updated-at": "2017-01-23T10:57:30.293+00:00"
+      },
+      "id": "50",
+      "links": {
+        "self": "/api/v1/orders/50"
+      },
+      "relationships": {
+        "sub-orders": {
+          "data": [
+            {
+              "id": "100",
+              "type": "sub-orders"
+            },
+            {
+              "id": "99",
+              "type": "sub-orders"
+            }
+          ],
+          "links": {
+            "related": "/api/v1/orders/50/sub-orders",
+            "self": "/api/v1/orders/50/relationships/sub-orders"
+          }
+        }
+      },
+      "type": "orders"
+    },
+    "included": [
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 1,
+          "product-id": "6297516931",
+          "properties": [
+            {
+              "name": "width",
+              "value": "1234"
+            },
+            {
+              "name": "drop",
+              "value": "2345"
+            },
+            {
+              "name": "measurement_type",
+              "value": "exact"
+            },
+            {
+              "name": "unit",
+              "value": "mm"
+            },
+            {
+              "name": "controls",
+              "value": "left"
+            }
+          ],
+          "quantity": 8,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 8,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0004",
+          "vendor": "test1"
+        },
+        "id": "500",
+        "links": {
+          "self": "/api/v1/line-items/500"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/500/fulfilment-lines",
+              "self": "/api/v1/line-items/500/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/500/sub-order",
+              "self": "/api/v1/line-items/500/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 1,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 6,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 6,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0003",
+          "vendor": "test1"
+        },
+        "id": "499",
+        "links": {
+          "self": "/api/v1/line-items/499"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/499/fulfilment-lines",
+              "self": "/api/v1/line-items/499/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/499/sub-order",
+              "self": "/api/v1/line-items/499/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 2,
+          "product-id": "6297516931",
+          "properties": [
+            {
+              "name": "width",
+              "value": "1234"
+            },
+            {
+              "name": "drop",
+              "value": "2345"
+            },
+            {
+              "name": "measurement_type",
+              "value": "exact"
+            },
+            {
+              "name": "unit",
+              "value": "mm"
+            },
+            {
+              "name": "controls",
+              "value": "left"
+            }
+          ],
+          "quantity": 8,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 8,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0002",
+          "vendor": "test1"
+        },
+        "id": "498",
+        "links": {
+          "self": "/api/v1/line-items/498"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/498/fulfilment-lines",
+              "self": "/api/v1/line-items/498/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/498/sub-order",
+              "self": "/api/v1/line-items/498/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 2,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 6,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 6,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0001",
+          "vendor": "test1"
+        },
+        "id": "497",
+        "links": {
+          "self": "/api/v1/line-items/497"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/497/fulfilment-lines",
+              "self": "/api/v1/line-items/497/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/497/sub-order",
+              "self": "/api/v1/line-items/497/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 3,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 7,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 7,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0000",
+          "vendor": "test1"
+        },
+        "id": "496",
+        "links": {
+          "self": "/api/v1/line-items/496"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/496/fulfilment-lines",
+              "self": "/api/v1/line-items/496/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/496/sub-order",
+              "self": "/api/v1/line-items/496/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 2,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 7,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 7,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0003",
+          "vendor": "test0"
+        },
+        "id": "494",
+        "links": {
+          "self": "/api/v1/line-items/494"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/494/fulfilment-lines",
+              "self": "/api/v1/line-items/494/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/494/sub-order",
+              "self": "/api/v1/line-items/494/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 3,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 8,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 8,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0004",
+          "vendor": "test0"
+        },
+        "id": "495",
+        "links": {
+          "self": "/api/v1/line-items/495"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/495/fulfilment-lines",
+              "self": "/api/v1/line-items/495/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/495/sub-order",
+              "self": "/api/v1/line-items/495/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 3,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 10,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 10,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0002",
+          "vendor": "test0"
+        },
+        "id": "493",
+        "links": {
+          "self": "/api/v1/line-items/493"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/493/fulfilment-lines",
+              "self": "/api/v1/line-items/493/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/493/sub-order",
+              "self": "/api/v1/line-items/493/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 2,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 1,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 1,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0001",
+          "vendor": "test0"
+        },
+        "id": "492",
+        "links": {
+          "self": "/api/v1/line-items/492"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/492/fulfilment-lines",
+              "self": "/api/v1/line-items/492/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/492/sub-order",
+              "self": "/api/v1/line-items/492/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "fulfilled?": false,
+          "name": "Some Random Item",
+          "packages": 3,
+          "product-id": "6297516931",
+          "properties": [],
+          "quantity": 4,
+          "quantity-fulfilled": 0,
+          "quantity-unfulfilled": 4,
+          "remote-variant-id": "19415636803",
+          "sku": "ITEM0000",
+          "vendor": "test0"
+        },
+        "id": "491",
+        "links": {
+          "self": "/api/v1/line-items/491"
+        },
+        "relationships": {
+          "fulfilment-lines": {
+            "links": {
+              "related": "/api/v1/line-items/491/fulfilment-lines",
+              "self": "/api/v1/line-items/491/relationships/fulfilment-lines"
+            }
+          },
+          "sub-order": {
+            "links": {
+              "related": "/api/v1/line-items/491/sub-order",
+              "self": "/api/v1/line-items/491/relationships/sub-order"
+            }
+          }
+        },
+        "type": "line-items"
+      },
+      {
+        "attributes": {
+          "acknowledged-at": null,
+          "acknowledged?": false,
+          "cancelled-at": null,
+          "consignment-reference": "EC-000-050-S3F",
+          "created-at": "2016-12-13T09:58:30.363+00:00",
+          "fulfilled-at": null,
+          "fulfilled?": false,
+          "line-items-count": 5,
+          "order-id": 50,
+          "partially-fulfilled?": false,
+          "reference": "ABC172",
+          "updated-at": "2017-01-20T12:10:43.691+00:00",
+          "vendor": "test1"
+        },
+        "id": "100",
+        "links": {
+          "self": "/api/v1/sub-orders/100"
+        },
+        "relationships": {
+          "fulfilments": {
+            "links": {
+              "related": "/api/v1/sub-orders/100/fulfilments",
+              "self": "/api/v1/sub-orders/100/relationships/fulfilments"
+            }
+          },
+          "line-items": {
+            "data": [
+              {
+                "id": "500",
+                "type": "line-items"
+              },
+              {
+                "id": "499",
+                "type": "line-items"
+              },
+              {
+                "id": "498",
+                "type": "line-items"
+              },
+              {
+                "id": "497",
+                "type": "line-items"
+              },
+              {
+                "id": "496",
+                "type": "line-items"
+              }
+            ],
+            "links": {
+              "related": "/api/v1/sub-orders/100/line-items",
+              "self": "/api/v1/sub-orders/100/relationships/line-items"
+            }
+          }
+        },
+        "type": "sub-orders"
+      },
+      {
+        "attributes": {
+          "acknowledged-at": null,
+          "acknowledged?": false,
+          "cancelled-at": null,
+          "consignment-reference": "EC-000-050-S3F",
+          "created-at": "2016-12-13T09:58:30.282+00:00",
+          "fulfilled-at": null,
+          "fulfilled?": false,
+          "line-items-count": 5,
+          "order-id": 50,
+          "partially-fulfilled?": false,
+          "reference": "ABC172",
+          "updated-at": "2017-01-20T12:10:43.762+00:00",
+          "vendor": "test0"
+        },
+        "id": "99",
+        "links": {
+          "self": "/api/v1/sub-orders/99"
+        },
+        "relationships": {
+          "fulfilments": {
+            "links": {
+              "related": "/api/v1/sub-orders/99/fulfilments",
+              "self": "/api/v1/sub-orders/99/relationships/fulfilments"
+            }
+          },
+          "line-items": {
+            "data": [
+              {
+                "id": "494",
+                "type": "line-items"
+              },
+              {
+                "id": "495",
+                "type": "line-items"
+              },
+              {
+                "id": "493",
+                "type": "line-items"
+              },
+              {
+                "id": "492",
+                "type": "line-items"
+              },
+              {
+                "id": "491",
+                "type": "line-items"
+              }
+            ],
+            "links": {
+              "related": "/api/v1/sub-orders/99/line-items",
+              "self": "/api/v1/sub-orders/99/relationships/line-items"
+            }
+          }
+        },
+        "type": "sub-orders"
+      }
+    ]
+  }
+}
