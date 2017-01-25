@@ -10,6 +10,7 @@ nock.disableNetConnect();
 // fixtures
 const input = require('./fixtures/updateOrderStatus/input.json');
 const filterOrdersResponse = require('./fixtures/updateOrderStatus/filterOrdersResponse.json');
+const filterOrdersEmptyResponse = require('./fixtures/updateOrderStatus/filterOrdersEmptyResponse.json');
 const updateOrderRequest = require('./fixtures/updateOrderStatus/updateOrderRequest.json');
 const updateOrderResponse = require('./fixtures/updateOrderStatus/updateOrderResponse.json');
 
@@ -93,4 +94,36 @@ describe("Updating order status", () => {
       expect(this.self.emit).toHaveBeenCalledWith('end');
     });
   });
+
+  describe("When the order does not exist", () => {
+    beforeEach((done) => {
+      this.self = {
+        emit(action) { if (action == 'end') done(); }
+      };
+      spyOn(this.self, "emit").and.callThrough();
+
+      this.msg = {
+        body: input
+      };
+
+      this.filterOrdersRequest = nock('https://vendors-staging.herokuapp.com', {"encodedQueryParams":true})
+          .get('/api/v1/orders?filter[consignment_reference]=EC-000-00A-K9G')
+          .reply(200, filterOrdersEmptyResponse);
+
+      updateOrderStatus.call(this.self, this.msg, this.cfg);
+    });
+
+    it("Fetches orders by consignment reference", () => {
+      expect(this.filterOrdersRequest.isDone()).toEqual(true);
+    });
+
+    it("Emits data", () => {
+      expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
+    });
+    
+    it("Emits end", () => {
+      expect(this.self.emit).toHaveBeenCalledTimes(2);
+      expect(this.self.emit).toHaveBeenCalledWith('end');
+    });
+  })
 });

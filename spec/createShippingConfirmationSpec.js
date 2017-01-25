@@ -8,6 +8,7 @@ nock.disableNetConnect();
 // fixtures
 const inputManifested = require('./fixtures/createShippingConfirmation/inputManifested.json');
 const inputNotManifested = require('./fixtures/createShippingConfirmation/inputNotManifested.json');
+const inputManifestedNoUpdateStatus = require('./fixtures/createShippingConfirmation/inputManifestedNoUpdateStatus.json');
 const createShippingConfirmationRequest = require('./fixtures/createShippingConfirmation/createShippingConfirmationRequest.json');
 const createShippingConfirmationResponse = require('./fixtures/createShippingConfirmation/createShippingConfirmationResponse.json');
 
@@ -80,7 +81,6 @@ describe("Creating a shipping confirmation", () => {
         expect(this.self.emit).toHaveBeenCalledWith('end');
       });
     });
-
   });
 
   describe("When consignment status is other than Manifested", () => {
@@ -108,6 +108,31 @@ describe("Creating a shipping confirmation", () => {
     it("Emits data", () => {
       expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
       expect(this.self.emit.calls.argsFor(0)[1].body.currentMessage).toEqual('Consignment status was InTransit, shipping confirmation was not created');
+    });
+
+    it("Emits end", () => {
+      expect(this.self.emit).toHaveBeenCalledTimes(2);
+      expect(this.self.emit).toHaveBeenCalledWith('end');
+    });
+  });
+
+  describe("When updateOrderStatus is empty", () => {
+    beforeEach(done => {
+      this.self = {
+        emit(action) { if (action === 'end') done(); }
+      };
+      spyOn(this.self, 'emit').and.callThrough();
+
+      this.msg = {
+        body: inputManifestedNoUpdateStatus
+      };
+
+      createShippingConfirmation.call(this.self, this.msg, this.cfg);
+    });
+
+    it("Emits data", () => {
+      expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
+      expect(this.self.emit.calls.argsFor(0)[1].body.currentMessage).toEqual({});
     });
 
     it("Emits end", () => {
