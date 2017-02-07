@@ -9,20 +9,5 @@
             "self": "https://vendors-staging.herokuapp.com/api/v1/variants/9369"
         },
         "type": "variants"
-    },
-    "vms": {
-        "getVariantsBySku": {
-            "vmsVariant": {
-                "attributes": {
-                    "inventory-quantity": 2174,
-                    "sku": "ACP001"
-                },
-                "id": "9369",
-                "links": {
-                    "self": "https://vendors-staging.herokuapp.com/api/v1/variants/9369"
-                },
-                "type": "variants"
-            }
-        }
     }
 }
