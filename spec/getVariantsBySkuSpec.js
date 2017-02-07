@@ -44,7 +44,7 @@ describe('Fulfills a sub order', () => {
     })
 
     it('emits valid JSON API compliant data', () => {
-      expect(this.self.emit).toHaveBeenCalledTimes(10)
+      expect(this.self.emit).toHaveBeenCalledTimes(8)
       expect(this.self.emit.calls.argsFor(0)[1].body).toEqual(result)
       expect(this.self.emit.calls.argsFor(3)[1].body).toEqual(result2)
       expect(this.self.emit).toHaveBeenCalledWith('end')
