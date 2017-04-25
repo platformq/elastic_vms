@@ -22,6 +22,7 @@
   "homepage": "https://github.com/platformq/elastic_vms#readme",
   "dependencies": {
     "elasticio-node": "0.0.7",
+    "elasticio-sailor-nodejs": "^2.1.0",
     "node-fetch": "^1.6.3",
     "promise": "^7.1.1",
     "request": "^2.75.0"
