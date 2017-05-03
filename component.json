@@ -48,6 +48,10 @@
       "main": "./lib/actions/updateConsignmentReference.js",
       "title": "Update consignment reference"
     },
+    "updateDispatchDate": {
+      "main": "./lib/actions/updateDispatchDate.js",
+      "title": "Update dispatch date"
+    },
     "markLabelsStale": {
       "main": "./lib/actions/markLabelsStale.js",
       "title": "Mark labels stale"
