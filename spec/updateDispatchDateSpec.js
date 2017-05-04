@@ -110,14 +110,16 @@ describe("When given a non-pallet order", () => {
       updateDispatchDate.call(this.self, this.msg, this.cfg);
     });
 
-      it("Emits data", () => {
-        let action = this.self.emit.calls.argsFor(0)[0];
-        expect(action).toEqual('data');
-      });
-
-      it("Emits end", () => {
-        expect(this.self.emit).toHaveBeenCalledTimes(2);
-        expect(this.self.emit).toHaveBeenCalledWith('end');
-      });
+    it("Emits the original message", () => {
+      let action = this.self.emit.calls.argsFor(0)[0];
+      let payload = this.self.emit.calls.argsFor(0)[1].body;
+      expect(action).toEqual('data');
+      expect(payload).toEqual(this.msg.body);
     });
+
+    it("Emits end", () => {
+      expect(this.self.emit).toHaveBeenCalledTimes(2);
+      expect(this.self.emit).toHaveBeenCalledWith('end');
+    });
+  });
 });
