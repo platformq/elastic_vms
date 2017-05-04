@@ -50,9 +50,11 @@ describe("Updating a pallet order", () => {
       expect(this.updateOrderRequest.isDone()).toEqual(true);
     });
 
-    it("Emits the data", () => {
+    it("Emits the original message", () => {
       let action = this.self.emit.calls.argsFor(0)[0];
+      let payload = this.self.emit.calls.argsFor(0)[1].body;
       expect(action).toEqual('data');
+      expect(payload).toEqual(this.msg.body);
     });
 
     it("Emits end", () => {
@@ -109,7 +111,7 @@ describe("When given a non-pallet order", () => {
         .patch('/api/v1/orders/123').reply(500);
 
       updateDispatchDate.call(this.self, this.msg, this.cfg);
-      });
+    });
 
       it("Emits data", () => {
         let action = this.self.emit.calls.argsFor(0)[0];
