@@ -107,9 +107,6 @@ describe("When given a non-pallet order", () => {
       };
       spyOn(this.self, 'emit').and.callThrough();
 
-      this.updateOrderRequest = nock('https://vendors-staging.herokuapp.com')
-        .patch('/api/v1/orders/123').reply(500);
-
       updateDispatchDate.call(this.self, this.msg, this.cfg);
     });
 
