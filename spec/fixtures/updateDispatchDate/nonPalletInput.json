@@ -1,0 +1,256 @@
+{
+  "webhook": {
+    "data": {
+      "id": "123",
+      "type": "orders",
+      "links": {
+        "self": "/api/v1/orders/0"
+      },
+      "attributes": {
+        "reference": "ABC123",
+        "remote-id": "123456",
+        "created-at": "2016-10-20T09:54:27.504+01:00",
+        "updated-at": "2016-10-20T09:54:27.504+01:00",
+        "placed-at": "2016-10-20T09:54:27.504+01:00",
+        "fraudulent-order": false,
+        "despatched-at": null,
+        "cancelled-at": null,
+        "company": "Test company",
+        "first-name": "John",
+        "last-name": "Doe",
+        "address-line-1": "18 Mississippi Avenue",
+        "address-line-2": "Manor House",
+        "city": "Leeds",
+        "country-code": "GB",
+        "postcode": "M15WG",
+        "phone": "0123456789",
+        "email": "john@example.com",
+        "delivery-code": "PARCEL",
+        "dispatch-date": null
+      },
+      "relationships": {
+        "sub-orders": {
+          "links": {
+            "self": "/api/v1/orders/0/relationships/sub-orders",
+            "related": "/api/v1/orders/0/sub-orders"
+          },
+          "data": [
+            {
+              "type": "sub-orders",
+              "id": "123"
+            }
+          ]
+        }
+      }
+    },
+    "included": [
+      {
+        "id": "0",
+        "type": "line-items",
+        "links": {
+          "self": "/api/v1/line-items/0"
+        },
+        "attributes": {
+          "name": "Example name",
+          "sku": "SKU1",
+          "quantity": 1,
+          "quantity-fulfilled": 0,
+          "properties": [],
+          "quantity-unfulfilled": 1,
+          "fulfilled?": false,
+          "remote-variant-id": "28377118599",
+          "price": "12.99"
+        },
+        "relationships": {
+          "sub-order": {
+            "links": {
+              "self": "/api/v1/line-items/0/relationships/sub-order",
+              "related": "/api/v1/line-items/0/sub-order"
+            }
+          },
+          "fulfilment-lines": {
+            "links": {
+              "self": "/api/v1/line-items/0/relationships/fulfilment-lines",
+              "related": "/api/v1/line-items/0/fulfilment-lines"
+            }
+          }
+        }
+      },
+      {
+        "id": "1",
+        "type": "line-items",
+        "links": {
+          "self": "/api/v1/line-items/0"
+        },
+        "attributes": {
+          "name": "Example name",
+          "sku": "SKU2",
+          "quantity": 1,
+          "quantity-fulfilled": 0,
+          "properties": [],
+          "quantity-unfulfilled": 1,
+          "fulfilled?": false,
+          "remote-variant-id": "3840511489",
+          "price": "129.99"
+        },
+        "relationships": {
+          "sub-order": {
+            "links": {
+              "self": "/api/v1/line-items/0/relationships/sub-order",
+              "related": "/api/v1/line-items/0/sub-order"
+            }
+          },
+          "fulfilment-lines": {
+            "links": {
+              "self": "/api/v1/line-items/0/relationships/fulfilment-lines",
+              "related": "/api/v1/line-items/0/fulfilment-lines"
+            }
+          }
+        }
+      },
+      {
+        "id": "2",
+        "type": "line-items",
+        "links": {
+          "self": "/api/v1/line-items/0"
+        },
+        "attributes": {
+          "name": "Example name",
+          "sku": "SKU3",
+          "quantity": 1,
+          "quantity-fulfilled": 0,
+          "properties": [],
+          "quantity-unfulfilled": 1,
+          "fulfilled?": false,
+          "remote-variant-id": "16292581191",
+          "price": "45.99"
+        },
+        "relationships": {
+          "sub-order": {
+            "links": {
+              "self": "/api/v1/line-items/0/relationships/sub-order",
+              "related": "/api/v1/line-items/0/sub-order"
+            }
+          },
+          "fulfilment-lines": {
+            "links": {
+              "self": "/api/v1/line-items/0/relationships/fulfilment-lines",
+              "related": "/api/v1/line-items/0/fulfilment-lines"
+            }
+          }
+        }
+      },
+      {
+        "id": "123",
+        "type": "sub-orders",
+        "links": {
+          "self": "/api/v1/sub-orders/0"
+        },
+        "attributes": {
+          "order-id": 0,
+          "created-at": "2016-10-20T09:54:27.539+01:00",
+          "updated-at": "2016-10-20T09:54:27.539+01:00",
+          "acknowledged-at": "2016-10-20T09:54:27.539+01:00",
+          "line-items-count": 1,
+          "vendor": "Vendor 1",
+          "fulfilled-at": null,
+          "acknowledged?": true,
+          "fulfilled?": false,
+          "partially-fulfilled?": false,
+          "reference": "ABC123",
+          "cancelled-at": null
+        },
+        "relationships": {
+          "line-items": {
+            "links": {
+              "self": "/api/v1/sub-orders/0/relationships/line-items",
+              "related": "/api/v1/sub-orders/0/line-items"
+            },
+            "data": [
+              {
+                "type": "line-items",
+                "id": "0"
+              }
+            ]
+          },
+          "fulfilments": {
+            "links": {
+              "self": "/api/v1/sub-orders/0/relationships/fulfilments",
+              "related": "/api/v1/sub-orders/0/fulfilments"
+            }
+          }
+        }
+      },
+      {
+        "id": "123",
+        "type": "sub-orders",
+        "links": {
+          "self": "/api/v1/sub-orders/0"
+        },
+        "attributes": {
+          "order-id": "123",
+          "created-at": "2016-10-20T09:54:27.539+01:00",
+          "updated-at": "2016-10-20T09:54:27.539+01:00",
+          "acknowledged-at": "2016-10-20T09:54:27.539+01:00",
+          "line-items-count": 1,
+          "vendor": "Vendor 2",
+          "fulfilled-at": null,
+          "acknowledged?": true,
+          "fulfilled?": false,
+          "partially-fulfilled?": false,
+          "reference": "ABC123",
+          "cancelled-at": null
+        },
+        "relationships": {
+          "line-items": {
+            "links": {
+              "self": "/api/v1/sub-orders/0/relationships/line-items",
+              "related": "/api/v1/sub-orders/0/line-items"
+            },
+            "data": [
+              {
+                "type": "line-items",
+                "id": "0"
+              }
+            ]
+          },
+          "fulfilments": {
+            "links": {
+              "self": "/api/v1/sub-orders/0/relationships/fulfilments",
+              "related": "/api/v1/sub-orders/0/fulfilments"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "shopify": {
+    "packageNumbers": {
+      "SKU1": 1,
+      "SKU2": 3,
+      "SKU3": 5
+    }
+  },
+  "vms": {
+    "getLeadTimes": {
+      "Vendor 1": 7,
+      "Vendor 2": 14
+    }
+  },
+  "hook": {
+    "getDeliveryMethods": {
+      "SKU1": "PALLET",
+      "SKU2": "PARCEL",
+      "SKU3": "OVERSIZED"
+    }
+  },
+  "electio": {
+    "createConsignment": {
+      "consignmentReference": "EC-000-04F-2AD"
+    },
+    "dispatchDate": null
+  },
+  "currentMessage": {
+    "consignmentReference": "EC-000-04F-2AD"
+  }
+}
