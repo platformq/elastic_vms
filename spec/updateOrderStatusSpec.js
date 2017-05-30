@@ -5,7 +5,7 @@ const nock = require('nock');
 
 nock.disableNetConnect();
 
-console.log = () => {};
+// console.log = () => {};
 
 // fixtures
 const input = require('./fixtures/updateOrderStatus/input.json');
@@ -59,9 +59,12 @@ describe("Updating order and return statuses", () => {
       expect(this.updateOrderRequest.isDone()).toEqual(true);
     });
 
-    it("Emits data", () => {
-      expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
-    });
+    it("Emits order data", () => {
+      let action = this.self.emit.calls.argsFor(0)[0]
+      let payload = this.self.emit.calls.argsFor(0)[1]
+      expect(action).toEqual('data')
+      expect(payload.body.vms.updateOrderStatus.data.id).toEqual('123')
+    })
 
     it("Emits end", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(2);
@@ -103,9 +106,12 @@ describe("Updating order and return statuses", () => {
       expect(this.updateOrderRequest.isDone()).toEqual(true);
     });
 
-    it("Emits data", () => {
-      expect(this.self.emit.calls.argsFor(0)[0]).toEqual('data');
-    });
+    it("Emits empty data", () => {
+      let action = this.self.emit.calls.argsFor(0)[0]
+      let payload = this.self.emit.calls.argsFor(0)[1]
+      expect(action).toEqual('data')
+      expect(payload.body.vms.updateOrderStatus).toEqual({})
+    })
 
     it("Emits end", () => {
       expect(this.self.emit).toHaveBeenCalledTimes(2);
